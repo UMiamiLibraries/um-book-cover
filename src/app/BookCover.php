@@ -120,7 +120,7 @@ class BookCover
 
     function update_idCache($alma_id, $isbn, $book_cover_url) {
         $url = 'http://sp.library.miami.edu/external_scripts/newitems/cover_cache/alma_ids.json';
-        $jsonString = file_get_contents(url);
+        $jsonString = file_get_contents($url);
         $data = json_decode($jsonString, true);
 
         $new_item[] = array($alma_id => array('book_cover' => "$book_cover_url" ,'isbn' => "$isbn"));
