@@ -42,7 +42,7 @@ class BookCover
             }
         }
 
-        return $this->googleBooksKey;
+        return $result;
     }
 
     private function getCoverFromSyndetics($local_destination)
