@@ -19,6 +19,7 @@ class BookCover
         $this->googleBooksKey = $googleBooksKey;
         $this->isbn = $isbn;
         $this->imageSize = $imageSize;
+        echo $googleBooksKey;
     }
 
     function getCover(){
