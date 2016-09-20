@@ -17,7 +17,7 @@ class BookCover
     public function __construct($syndeticsClientCode, $isbn, $imageSize, $googleBooksKey) {
         $this->syndeticsClientCode = $syndeticsClientCode;
         $this->googleBooksKey = $googleBooksKey;
-        $this->isbn = $this->validateISBN($isbn);
+        $this->isbn = $isbn;
         $this->imageSize = $imageSize;
     }
 
@@ -41,19 +41,6 @@ class BookCover
                 }
             }
         }
-
-        return $result;
-    }
-
-    private function validateISBN($isbn)
-    {
-        $str = preg_replace('/[^0-9X]+/', '', $isbn);
-
-        $length = strlen ($str);
-        $result = '';
-
-        if ($length == 10 || $length == 13)
-            $result = $str;
 
         return $result;
     }
