@@ -118,17 +118,6 @@ class BookCover
         file_put_contents($local_destination, $raw);
     }
 
-    function update_idCache($alma_id, $isbn, $book_cover_url) {
-        $url = 'http://sp.library.miami.edu/external_scripts/newitems/cover_cache/alma_ids.json';
-        $jsonString = file_get_contents($url);
-        $data = json_decode($jsonString, true);
-
-        $new_item[] = array($alma_id => array('book_cover' => "$book_cover_url" ,'isbn' => "$isbn"));
-        array_push($data, $new_item);
-
-        file_put_contents($url, $data);
-    }
-
     private function validateImageExists($isbn, $syndeticsClientCode)
     {
         $xmlUrl = 'https://syndetics.com/index.aspx?isbn=' . $isbn . '/xml.xml&client=' . $syndeticsClientCode . '&type=rn12';
