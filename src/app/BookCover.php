@@ -19,7 +19,6 @@ class BookCover
         $this->googleBooksKey = $googleBooksKey;
         $this->isbn = $isbn;
         $this->imageSize = $imageSize;
-        echo $googleBooksKey;
     }
 
     function getCover(){
@@ -43,7 +42,7 @@ class BookCover
             }
         }
 
-        return $result;
+        return $this->googleBooksKey;
     }
 
     private function getCoverFromSyndetics($local_destination)
